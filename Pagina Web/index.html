@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard IoT</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <h1>Panel de Control PLC</h1>
+
+    <div class="dashboard-grid">
+        <div class="card">
+            <h2>Temperatura</h2>
+            <div class="valor" id="temp-display"> °C</div>
+            <div class="chart-container"><canvas id="tempChart"></canvas></div>
+        </div>
+
+        <div class="card">
+            <h2>Humedad</h2>
+            <div class="valor" id="hum-display"> %</div>
+            <div class="chart-container"><canvas id="humChart"></canvas></div>
+        </div>
+
+        <div class="card">
+            <h2>Vibración Motor</h2>
+            <div class="valor" id="vib-display"> Hz</div>
+            <div class="chart-container"><canvas id="vibChart"></canvas></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
