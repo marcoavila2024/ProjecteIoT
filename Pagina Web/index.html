@@ -13,22 +13,39 @@
     <h1>Panel de Control PLC</h1>
 
     <div class="dashboard-grid">
+        <!-- Temperatura Exterior -->
         <div class="card">
-            <h2>Temperatura</h2>
-            <div class="valor" id="temp-display"> °C</div>
-            <div class="chart-container"><canvas id="tempChart"></canvas></div>
+            <h2>Temperatura Exterior</h2>
+            <div class="valor" id="tempExt-display">-- °C</div>
+            <div class="chart-container"><canvas id="tempExtChart"></canvas></div>
         </div>
 
+        <!-- Temperatura PLC -->
+        <div class="card">
+            <h2>Temperatura PLC</h2>
+            <div class="valor" id="tempPlc-display">-- °C</div>
+            <div class="chart-container"><canvas id="tempPlcChart"></canvas></div>
+        </div>
+
+        <!-- Humedad -->
         <div class="card">
             <h2>Humedad</h2>
-            <div class="valor" id="hum-display"> %</div>
+            <div class="valor" id="hum-display">-- %</div>
             <div class="chart-container"><canvas id="humChart"></canvas></div>
         </div>
 
+        <!--  Estado PLC 1 -->
         <div class="card">
-            <h2>Vibración Motor</h2>
-            <div class="valor" id="vib-display"> Hz</div>
-            <div class="chart-container"><canvas id="vibChart"></canvas></div>
+            <h2>Estado PLC1</h2>
+            <div class="valor" id="estat-display">--</div>
+            <div class="chart-container"><canvas id="estatChart"></canvas></div>
+        </div>
+
+        <!--  Piezas PLC 1 -->
+        <div class="card">
+            <h2>Piezas PLC1</h2>
+            <div class="valor" id="peces-display">-- uds</div>
+            <div class="chart-container"><canvas id="pecesChart"></canvas></div>
         </div>
 
     </div>
