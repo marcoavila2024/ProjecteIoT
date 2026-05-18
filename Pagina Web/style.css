@@ -1,0 +1,440 @@
+:root {
+    /* Paleta Cromàtica Oficial de la Memòria */
+    --industrial-blue: #1F4E79;
+    --steel-blue: #2E74B5;
+    --plant-green: #2E7D32;
+    --warning-amber: #F9A825;
+    --alarm-red: #C62828;
+    --surface-light: #F5F5F5;
+    --dark-slate: #212121;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+
+    /* Tipografia */
+    --font-main: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+/*
+   RESET
+ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--surface-light);
+    color: var(--dark-slate);
+}
+
+/*
+   SISTEMA DE VISTES I PESTANYES
+ */
+.view {
+    display: none;
+}
+
+.view.active {
+    display: block;
+}
+
+.tab-content {
+    display: none;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+/*
+   PANTALLA DE LOGIN
+ */
+#login-view {
+    height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: var(--industrial-blue);
+}
+
+#login-view.active {
+    display: flex;
+}
+
+.login-card {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 350px;
+}
+
+.login-icon {
+    font-size: 48px;
+    color: var(--steel-blue);
+    margin-bottom: 1rem;
+}
+
+.login-card h1 {
+    font-size: 22px;
+    color: var(--industrial-blue);
+    margin-bottom: 5px;
+}
+
+.login-card p {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 2rem;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: var(--font-mono);
+}
+
+.login-card button {
+    width: 100%;
+    padding: 12px;
+    background: var(--industrial-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-card button:hover {
+    background: var(--steel-blue);
+}
+
+/*
+   BARRA DE NAVEGACIÓ (TOPBAR)
+*/
+.topbar {
+    background: var(--industrial-blue);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 60px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.nav-tabs {
+    display: flex;
+    height: 100%;
+}
+
+.tab-btn {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 0 20px;
+    font-family: var(--font-main);
+    font-weight: 600;
+    cursor: pointer;
+    height: 100%;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+}
+
+.tab-btn:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn.active {
+    color: white;
+    border-bottom: 3px solid var(--warning-amber);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.logout-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 
+   DASHBOARD I TARGETES (CARDS)
+ */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header-section h2 {
+    font-size: 22px;
+    color: var(--industrial-blue);
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-family: var(--font-mono);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #94a3b8;
+}
+
+.dot.connected {
+    background: var(--plant-green);
+    box-shadow: 0 0 8px var(--plant-green);
+}
+
+.dot.error {
+    background: var(--alarm-red);
+    box-shadow: 0 0 8px var(--alarm-red);
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.card-wide {
+    grid-column: 1 / -1;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.card-header h3 {
+    font-size: 16px;
+    color: var(--industrial-blue);
+    font-weight: 600;
+}
+
+/* Colors icones */
+.icon-green { color: var(--plant-green); }
+.icon-blue { color: var(--steel-blue); }
+.icon-orange { color: #f97316; }
+.icon-purple { color: #a855f7; }
+.icon-amber { color: var(--warning-amber); }
+.icon-red { color: var(--alarm-red); }
+
+.valor {
+    font-family: var(--font-mono);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark-slate);
+    margin-bottom: 15px;
+}
+
+.chart-container {
+    position: relative;
+    height: 200px;
+    width: 100%;
+}
+
+/* 
+   CONTROL, ALARMES I SWITCHES
+ */
+.text-muted {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 1.5rem;
+}
+
+.control-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: var(--surface-light);
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    font-weight: 500;
+}
+
+/* Taula d'alarmes */
+.alarm-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+}
+
+.alarm-table th {
+    padding: 12px;
+    border-bottom: 2px solid var(--border-color);
+    color: var(--industrial-blue);
+}
+
+.alarm-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mono {
+    font-family: var(--font-mono);
+    color: #64748b;
+}
+
+.badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-resolved {
+    background: rgba(46, 125, 50, 0.1);
+    color: var(--plant-green);
+}
+
+/* Toggle Switch (Interruptor) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e1;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--alarm-red);
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+.card-header-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-header-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-header-title h3 {
+    font-size: 16px;
+    color: var(--industrial-blue);
+    font-weight: 600;
+}
+
+.btn-clear {
+    background-color: transparent;
+    color: var(--alarm-red);
+    border: 1px solid var(--alarm-red);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-main);
+    transition: all 0.2s;
+}
+
+.btn-clear:hover {
+    background-color: var(--alarm-red);
+    color: white;
+}
