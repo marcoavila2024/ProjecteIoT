@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#F5F5F5">
+
+    <TextView android:text="Controlador IoT" android:textSize="28sp" android:textStyle="bold" android:textColor="#1F4E79" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="24dp"/>
+
+    <TextView android:text="Temp Exterior:" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <TextView android:id="@+id/txtTempExt" android:text="-- °C" android:textSize="22sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12dp"/>
+
+    <TextView android:text="Humitat:" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <TextView android:id="@+id/txtHum" android:text="-- %" android:textSize="22sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12dp"/>
+
+    <TextView android:text="Temp PLC:" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <TextView android:id="@+id/txtTempPlc" android:text="-- °C" android:textSize="22sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12dp"/>
+
+    <TextView android:text="Peces Fabricades:" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <TextView android:id="@+id/txtPeces" android:text="-- uds" android:textSize="22sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12dp"/>
+
+    <TextView android:text="Estat Màquina:" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    <TextView android:id="@+id/txtEstat" android:text="--" android:textSize="22sp" android:textStyle="bold" android:textColor="#C62828" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="24dp"/>
+
+    <ToggleButton android:id="@+id/btnAlarma" android:textOn="ALARMA ACTIVADA" android:textOff="ACTIVAR ALARMA" android:layout_width="match_parent" android:layout_height="60dp" android:backgroundTint="#1F4E79" android:textColor="#FFFFFF"/>
+
+</LinearLayout>
