@@ -193,7 +193,7 @@ const configuracionSensores = {
     }
 };
 
-// 2. CONNEXIÓ MQTT (Intacte)
+// 2. conexio mqtt
 const brokerUrl = 'ws://157.151.236.103:9001'; 
 const client = mqtt.connect(brokerUrl, {
     username: 'admin_iot',
@@ -207,7 +207,7 @@ client.on('connect', () => {
     client.subscribe('fabrica/#'); 
 });
 
-// 3. procesament
+//  procesament
 client.on('message', (topic, message) => {
     try {
         const datosJSON = JSON.parse(message.toString());
